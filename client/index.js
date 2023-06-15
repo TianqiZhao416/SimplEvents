@@ -3,13 +3,13 @@ import { createRoot } from "react-dom/client";
 import ReactDOM from "react-dom";
 // import c
 // import { BrowserRouter } from "react-router-dom";
-// import App from "./App.jsx";
+import App from "./App.jsx";
 
-// const root = createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 // console.log("lol");
-ReactDOM.render(
+root.render(
   <div>
-    <p>react</p>
-  </div>,
-  document.getElementById("root")
+    <App />
+  </div>
+  // document.getElementById("root")
 );

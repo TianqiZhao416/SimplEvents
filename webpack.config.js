@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: process.env,
+  mode: process.env.NODE_ENV,
   entry: {
     src: "./client/index.js",
   },
@@ -12,12 +12,11 @@ module.exports = {
     filename: "bundle.js",
   },
 
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     template: path.join(__dirname, "client", "index.html"),
-  //     filename: "./client/index.html",
-  //   }),
-  // ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "client", "index.html"),
+    }),
+  ],
 
   devServer: {
     proxy: {
@@ -42,21 +41,6 @@ module.exports = {
         exclude: [/node_modules/, /client\/stylesheets\/modules/],
         use: ["style-loader", "css-loader", "sass-loader"],
       },
-      // {
-      //   test: /.(css|scss)$/,
-      //   include: [/client\/stylesheets\/modules/],
-      //   use: [
-      //     "style-loader",
-      //     {
-      //       loader: "css-loader",
-      //       options: {
-      //         modules: true,
-      //       //   localIdentName: "[name]__[local]___[hash:base64:5]",
-      //       },
-      //     },
-      //     "sass-loader",
-      //   ],
-      // },
     ],
   },
   resolve: {
