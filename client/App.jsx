@@ -13,12 +13,36 @@ import Creator from './modules/createEvent';
 
 // };
 
-const App = () => (
+const App = () => {
+
+
+  const makeEvent = (day, description) =>{
+
+
+    let event = {
+        "day": day,
+        "description": description,
+    }
+    fetch('../event', {
+        method: 'POST',
+        body: JSON.stringify(event),
+        headers: { 'Content-Type': 'application/json' },
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (Object.keys(data).length <= 1) throw 'Incorrect shape of response';
+        return data
+    })
+    .catch(err => console.log('favClicked: ERROR: ', err));
+
+  }
+
+  return (
     <div id="app">
-        <p>rendering app</p>
-        <Creator/>
+        <Creator function = {makeEvent}/>
         <Week/>
 
     </div>
   );
+}
 export default App

@@ -1,15 +1,70 @@
+/* body{
+  background-color: lightslategray;
+} */
 .week{
-    display: flex;
+  display: flex;
   flex-direction: row;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(1fr));
-    align-items: start;
-    justify-items: center;
-    grid-gap: 10px; */
-    /* background-color */
+  /* background-color: grey; */
+
 }
 .day{
+    margin-left: 2px;
+    margin-right: 2px;
+    
     width: 280px;
-    background-color: red;
+    /* background-color:; */
+    /* border-width: ; */
+    border-color: black;
+    background-color: lightgray;
+    border-style: solid;
+    border-color: darkcyan;
+    border-width: 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 
+
+}
+
+.eventCreatorForm{
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  border-color: black;
+  border-width: 2px;
+  /* background-color: black; */
+}
+/* .label{
+  margin-top: 5px;
+} */
+.buttons{
+  /* background-color: grey; */
+  display: flex; 
+  /* justify-content: center; */
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.form{
+  background-color: lightgray;
+  border-color: black;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: darkcyan;
+  border-width: 1px;
+  width: 300px;
+  height: 130px;
+  color: black;
+  /* background-color: grey; */
+  /* display: flex; 
+  justify-content: center; */
+
+}
+
+.events{
+  /* background-color: red; */
+  box-shadow: 2;
 }

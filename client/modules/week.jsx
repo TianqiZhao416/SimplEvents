@@ -3,17 +3,27 @@ import { Switch, Route } from 'react-router-dom';
 import Day from './day';
 
 const Week = () => {
+    const weekDay = {
+        0: ' Monday',
+        1: ' Tuesday',
+        2: ' Wednesday',
+        3: ' Thursday',
+        4: ' Friday',
+        5: ' Saturday',
+        6: ' Sunday'
+    }
     const week = []
-    for(let x=0; x< 7; x++){
+    for (let x=0; x< 7; x++){
         week.push(
-            <Day/>
+            <Day key={x} info={weekDay[x]}/>
         )
     }
 
     return (
     <div >
-        <p>rendering week</p>
+
         <div className="week">
+
         {week}
         </div>
     </div>
